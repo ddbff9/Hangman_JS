@@ -24,27 +24,6 @@
   background-position: -720px 0px;
 }
 
-/* .button-grid{
-  display:grid;
-  justify-content: center;
-  align-content: center;
-  min-height: 100vh;
-  grid-template-columns: repeat(13,50px);
-  grid-template-rows: minmax(50px, auto) repeat(2,50px);
-}
-
-.button-grid > button {
-  cursor: pointer;
-  font-size: 2rem;
-  border: 1px solid white;
-  outline: none;
-  background-color: rgba(205, 214, 208, .75);
-}
-
-.button-grid > button:hover {
-  background-color: rgba(205, 214, 208, .90);
-} */
-
 body{
   background-color: grey;
 }
