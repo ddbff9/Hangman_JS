@@ -11,7 +11,7 @@ class Game{
   }
 
   getSecretWord(){
-    this.secretWord = 'HANNAH';
+    this.secretWord = 'I LOVE YOU';
   }
 
   displaySecretWord(){
