@@ -4,10 +4,9 @@ class Game{
     this.image_num = 0;
     this.correctGuess = false;
     this.guessedLetters= [];
-    this.updateGuesses();
     this.getSecretWord();
-    this.displaySecretWord();
-    
+    this.displaySecretWord(); 
+    this.updateGuesses();
   }
 
   getSecretWord(){
@@ -16,19 +15,18 @@ class Game{
 
   displaySecretWord(){
     this.secretWordLength = this.secretWord.length;
-    this.tempString = ''
-    console.log(this.guessedLetters)
+    this.outputString = '';
+
     for(let i=0; i<this.secretWordLength; i++){
-      
       if(this.guessedLetters.includes(this.secretWord[i])){
-        this.tempString = `${this.tempString} ${this.secretWord[i]} `;
+        this.outputString = `${this.outputString} ${this.secretWord[i]} `;
       } else if(this.secretWord[i] === ' '){
-        this.tempString = `${this.tempString}   \u00A0\u00A0\u00A0  `;
+        this.outputString = `${this.outputString}   \u00A0\u00A0\u00A0  `;
       }else {      
-        this.tempString = `${this.tempString} __ `;
+        this.outputString = `${this.outputString} __ `;
       }
     }
-    secretWordDisplay.innerText = this.tempString;
+    secretWordDisplay.innerText = this.outputString;
   }
 
   checkGuess(guess){
@@ -66,15 +64,10 @@ class Game{
    }
 }
 
-
-
 const hangmanImage = document.querySelector('#hangman_img');
 const remainingGuessesDisplay = document.querySelector('#remainingGuesses');
 const letterButtons = document.querySelectorAll('[data-letter]');
 const secretWordDisplay = document.querySelector('#secretWord');
-
-var api = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&includePartOfSpeech=noun&minCorpusCount=8000&maxCorpusCount=-1&minDictionaryCount=3&maxDictionaryCount=-1&minLength=6&maxLength=12&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
-
 
 letterButtons.forEach(button => {
   button.addEventListener('click',()=>{
@@ -87,10 +80,6 @@ letterButtons.forEach(button => {
     }
   })
 });
-
-remainingGuessesDisplay.addEventListener('click', ()=>{
-  console.log(remainingGuessesDisplay.innerText);
-})
 
 const randomWords = [
   "arrow",
